@@ -1,0 +1,25 @@
+[project]
+name = "greenflow"
+version = "0.1.0"
+description = "Greenflow API"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "flask>=3.1.0",
+    "ipykernel>=6.29.5",
+    "matplotlib>=3.10.0",
+    "pandas>=2.2.3",
+    "pyarrow>=19.0.0",
+    "ruff>=0.9.4",
+    "seaborn>=0.13.2",
+]
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 88  # Set max line length
+select = ["E", "F", "I"]  # Enable rules (E: Pyflakes, F: Pycodestyle, I: Isort)
+ignore = ["E501"]  # Ignore long line errors
