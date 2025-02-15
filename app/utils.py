@@ -1,3 +1,5 @@
+# Key functions for data processing and analysis that are used in the API endpoints.
+
 def top_consumers(df, resource, top_n=5, order="desc"):
     """Returns the top N companies consuming the most of a given resource."""
     if order == "asc":
