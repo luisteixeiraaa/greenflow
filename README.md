@@ -23,7 +23,7 @@ The GreenFlow Report API is a Flask-based web service that provides insights int
 ### Top Consumers
 - **GET `/top_consumers/<resource>`**: Returns the top 5 consumers of the specified resource by default.
   - Example: `/top_consumers/energia`
-- **GET `/top_consumers/<resource>/<top_n_order>`**: Returns the top N consumers of the specified resource, ordered by ascending or descending.
+- **GET `/top_consumers/<resource>/<top_n_order>`**: Returns the top N consumers of the specified resource, ordered by ascending (`asc`) or descending (`desc`).
   - Example: `/top_consumers/energia/10_desc` (top 10 consumers in descending order)
 
 ### Sector Comparison
@@ -37,12 +37,42 @@ The GreenFlow Report API is a Flask-based web service that provides insights int
 ## Setup
 
 ### Prerequisites
-- Python 3.x
+- Python 3.8+
 - Flask
 - Pandas
 
 ### Installation
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/greenflow-report-api.git
+   git clone https://github.com/luisteixeiraaa/greenflow.git
    cd greenflow-report-api
+   ```
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the Flask app**:
+   ```bash
+   python main.py
+   ```
+   The API will start at `http://127.0.0.1:5000`.
+
+## Usage
+
+### Example Requests
+- **Top 5 energy consumers**:
+  ```bash
+  curl http://127.0.0.1:5000/top_consumers/energia
+  ```
+- **Top 10 water consumers (descending order)**:
+  ```bash
+  curl http://127.0.0.1:5000/top_consumers/agua/10_desc
+  ```
+- **Compare CO2 emissions across sectors**:
+  ```bash
+  curl http://127.0.0.1:5000/sector_comparison/emissoes
+  ```
+- **Fetch company info by company ID**:
+  ```bash
+  curl http://127.0.0.1:5000/company_info/123
+  ```
